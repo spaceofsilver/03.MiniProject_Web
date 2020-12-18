@@ -21,11 +21,11 @@
             <h2>환영합니다<b>{{session['uid']}}</b>님! <br>이곳은 마이페이지입니다.</h2>
         </div>
     </div>
-
+<!-- 회원정보 -->
     <div class="w3-row w3-container" style="margin:50px 0">
         <div class="w3-half w3-container">
             <div class="w3-topbar w3-border-amber">
-                <h2>{{session['uid']}}님의 회원정보 수정</h2>
+                <h2>{{session['uid']}}님의 회원정보</h2>
                 <table>
                     <thead>
                         <tr>
@@ -42,10 +42,12 @@
                         </tr>
                     </tbody>
                 </table>
-
+                <!-- 회원정보 수정 -->
+                
+                <!-- //회원정보 수정-->
             </div>
         </div>
-
+<!-- 장바구니 -->
         <div class="w3-half w3-container">
             <div class="w3-topbar w3-border-amber">
                 <h2><b>{{session['uid']}}</b> 님의 장바구니</h2>

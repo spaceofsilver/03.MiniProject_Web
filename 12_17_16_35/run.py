@@ -188,7 +188,7 @@ def new_pants_buy():
     session['pants_amt']     = pants_amt
     return render_template('new_pants_buy.html')
 
-
+# ------------------------------------------------------------------
 ## after 고객센터 
 @app.route('/new_notice')
 def new_notice():
@@ -207,7 +207,31 @@ def new_chat():
 def new_chat2():
     return render_template('new_chat2.html')
 
+## notice 내부에 있는 사이트로 메뉴바에 추가 안함.
+@app.route('/upload_new_chat')
+def upload_new_chat():
+    return render_template('upload_new_chat.html')
 
+# ------------------------------------------------------------------
+
+@app.route('/new_upload', methods=['GET','POST'])
+def new_upload(): 
+    if request.method == 'GET':
+        return render_template('new_upload.html', name='사용자명')
+    else:
+        # 파일 업로드 처리하는 부분
+        f = request.files['file']
+        
+        #print(os.path.abspath(__file__))
+        #print(os.path.dirname(os.path.abspath(__file__)))
+        #print(os.getcwd())
+        # 경로를 os에 상관없이 자동으로 계산해준다
+        dir = os.path.dirname(os.path.abspath(__file__))
+        #print(dir + '/static/upload/' + f.filename )
+        f.save(dir + '/static/upload/' + f.filename)
+        return '''
+            <img src='static/upload/%s'/>
+        ''' %f.filename
 
 
 

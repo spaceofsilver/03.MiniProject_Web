@@ -1,468 +1,448 @@
 <html lang="ko" class="narrow-screen">
+
 <head>
-		
-    <link rel="stylesheet" href="https://static.melon.co.kr/static/web/resource/style/w1/76/e/bvi69ssvs0qsit.css" type="text/css">
+
+	<link rel="stylesheet" href="https://static.melon.co.kr/static/web/resource/style/w1/76/e/bvi69ssvs0qsit.css"
+		type="text/css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  
+
 
 
 
 
 	<script type="text/javascript">
-	var helpDomain = 'https://help.melon.com';
-	var memberDomain = 'https://member.melon.com';
+		var helpDomain = 'https://help.melon.com';
+		var memberDomain = 'https://member.melon.com';
 
-	(function() {
-		WEBPOCIMG = {
-			defaultImg : function(obj){
-			},
-			defaultAlbumImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
+		(function () {
+			WEBPOCIMG = {
+				defaultImg: function (obj) {
+				},
+				defaultAlbumImg: function (obj, width) {
+					if (width == null || width == '') width = $(obj).width();
 
-				var thumbType = "_500";
-				if(width > 0 && width <= 38){
-					thumbType = "_38";
-				} else if(width > 38 && width <= 52){
-					thumbType = "_52";
-				} else if(width > 52 && width <= 70){
-					thumbType = "_70";
-				} else if(width > 70 && width <= 114){
-					// thumbType = "_114";
-					thumbType = "_120";
-				} else if(width > 114 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200){
-					thumbType = "_500";
+					var thumbType = "_500";
+					if (width > 0 && width <= 38) {
+						thumbType = "_38";
+					} else if (width > 38 && width <= 52) {
+						thumbType = "_52";
+					} else if (width > 52 && width <= 70) {
+						thumbType = "_70";
+					} else if (width > 70 && width <= 114) {
+						// thumbType = "_114";
+						thumbType = "_120";
+					} else if (width > 114 && width <= 120) {
+						thumbType = "_120";
+					} else if (width > 120 && width <= 200) {
+						thumbType = "_200";
+					} else if (width > 200) {
+						thumbType = "_500";
+					}
+
+					altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
+
+					obj.src = altSrc;
+				},
+				defaultArtistImg: function (obj, width) {
+					if (width == null || width == '') width = $(obj).width();
+
+					var thumbType = "_300";
+					if (width > 0 && width <= 34) {
+						thumbType = "_34";
+					} else if (width > 34 && width <= 40) {
+						thumbType = "_40";
+					} else if (width > 40 && width <= 54) {
+						thumbType = "_54";
+					} else if (width > 54 && width <= 70) {
+						thumbType = "_70";
+					} else if (width > 70 && width <= 100) {
+						thumbType = "_100";
+					} else if (width > 100 && width <= 120) {
+						thumbType = "_120";
+					} else if (width > 120 && width <= 160) {
+						thumbType = "_160";
+					} else if (width > 160 && width <= 200) {
+						thumbType = "_200";
+					} else if (width > 200 && width <= 300) {
+						thumbType = "_300";
+					}
+
+					altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + ".jpg";
+
+					obj.src = altSrc;
+				},
+				defaultDjImg: function (obj) {
+				},
+				defaultMvImg: function (obj, width, height) {
+					if (width == null || width == '') width = $(obj).width();
+					if (height == null || height == '') height = $(obj).height();
+
+					var ratio43 = Math.floor((4 / 3) * 10) / 10;
+					var ratio169 = Math.floor((16 / 9) * 10) / 10;
+					var ratioObj = Math.floor((width / height) * 10) / 10;
+
+					var ratio = "4x3";
+					if (ratioObj == ratio43) {
+						ratio = "4x3"; //contentsType = "mv43";
+					} else if (ratioObj == ratio169) {
+						ratio = "16x9"; //contentsType = "mv169";
+					} else {
+						if (ratioObj > 1.5) ratio = "16x9";
+						else ratio = "4x3";
+					}
+
+					var thumbType = "_" + ratio + "_640";
+					if (width > 0 && width <= 60) {
+						thumbType = "_" + ratio + "_60";
+					} else if (width > 60 && width <= 120) {
+						thumbType = "_" + ratio + "_120";
+					} else if (width > 120 && width <= 144) {
+						thumbType = "_" + ratio + "_144";
+					} else if (width > 144 && width <= 240) {
+						thumbType = "_" + ratio + "_240";
+					} else if (width > 240 && width <= 480) {
+						thumbType = "_" + ratio + "_480";
+					} else if (width > 480) {
+						thumbType = "_" + ratio + "_640";
+					}
+
+					var altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noMovie" + thumbType + ".jpg";
+
+					obj.src = altSrc;
+				},
+				defaultPlaylistImg: function (obj, width) {
+					if (width == null || width == '') width = $(obj).width();
+
+					var thumbType = "_500";
+					if (width > 0 && width <= 38) {
+						thumbType = "_38";
+					} else if (width > 38 && width <= 52) {
+						thumbType = "_52";
+					} else if (width > 52 && width <= 70) {
+						thumbType = "_70";
+					} else if (width > 70 && width <= 114) {
+						thumbType = "_114";
+					} else if (width > 114 && width <= 120) {
+						thumbType = "_120";
+					} else if (width > 120 && width <= 200) {
+						thumbType = "_200";
+					} else if (width > 200) {
+						thumbType = "_500";
+					}
+
+					altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
+
+					obj.src = altSrc;
+				},
+				defaultMemberImg: function (obj, width) {
+					if (width == null || width == '') width = $(obj).width();
+
+					var thumbType = "_130";
+					if (width > 0 && width <= 40) {
+						thumbType = "_40";
+					} else if (width > 40 && width <= 54) {
+						thumbType = "_54";
+					} else if (width > 54 && width <= 72) {
+						thumbType = "_72";
+					} else if (width > 72 && width <= 96) {
+						thumbType = "_96";
+					} else if (width > 96 && width <= 112) {
+						thumbType = "_112";
+					} else if (width > 112) {
+						thumbType = "_130";
+					}
+
+					altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noUser" + thumbType + ".jpg";
+
+					obj.src = altSrc;
+				},
+				defaultPhotoImg: function (obj, width) {
+					if (width == null || width == '') width = $(obj).width();
+
+					var thumbType = "_200";
+					/* 				if(width > 0 && width <= 60){
+										thumbType = "_60";
+									} else if(width > 60 && width <= 120){
+										thumbType = "_120";
+									} else if(width > 120 && width <= 200){
+										thumbType = "_200";
+									} else if(width > 200 && width <= 300){
+										thumbType = "_300";
+									} else if(width > 300 && width <= 500){
+										thumbType = "_500";
+									} else if(width > 500){
+										thumbType = "_700";
+									} */
+
+					altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
+
+					obj.src = altSrc;
 				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
-
-				obj.src = altSrc;
-			},
-			defaultArtistImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_300";
-				if(width > 0 && width <= 34){
-					thumbType = "_34";
-				} else if(width > 34 && width <= 40){
-					thumbType = "_40";
-				} else if(width > 40 && width <= 54){
-					thumbType = "_54";
-				} else if(width > 54 && width <= 70){
-					thumbType = "_70";
-				} else if(width > 70 && width <= 100){
-					thumbType = "_100";
-				} else if(width > 100 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 160){
-					thumbType = "_160";
-				} else if(width > 160 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200 && width <= 300){
-					thumbType = "_300";
-				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + ".jpg";
-
-				obj.src = altSrc;
-			},
-			defaultDjImg : function(obj){
-			},
-			defaultMvImg : function(obj, width, height){
-				if(width == null || width == '') width = $(obj).width();
-				if(height == null || height == '') height = $(obj).height();
-
-				var ratio43 = Math.floor((4/3)*10)/10;
-				var ratio169 = Math.floor((16/9)*10)/10;
-				var ratioObj = Math.floor((width/height)*10)/10;
-
-				var ratio = "4x3";
-				if(ratioObj == ratio43){
-					ratio = "4x3"; //contentsType = "mv43";
-				} else if(ratioObj == ratio169){
-					ratio = "16x9"; //contentsType = "mv169";
-				} else {
-					if(ratioObj > 1.5) ratio = "16x9";
-					else ratio = "4x3";
-				}
-
-				var thumbType = "_" + ratio + "_640";
-				if(width > 0 && width <= 60){
-					thumbType = "_" + ratio + "_60";
-				} else if(width > 60 && width <= 120){
-					thumbType = "_" + ratio + "_120";
-				} else if(width > 120 && width <= 144){
-					thumbType = "_" + ratio + "_144";
-				} else if(width > 144 && width <= 240){
-					thumbType = "_" + ratio + "_240";
-				} else if(width > 240 && width <= 480){
-					thumbType = "_" + ratio + "_480";
-				} else if(width > 480){
-					thumbType = "_" + ratio + "_640";
-				}
-
-				var altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noMovie" + thumbType + ".jpg";
-
-				obj.src = altSrc;
-			},
-			defaultPlaylistImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_500";
-				if(width > 0 && width <= 38){
-					thumbType = "_38";
-				} else if(width > 38 && width <= 52){
-					thumbType = "_52";
-				} else if(width > 52 && width <= 70){
-					thumbType = "_70";
-				} else if(width > 70 && width <= 114){
-					thumbType = "_114";
-				} else if(width > 114 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200){
-					thumbType = "_500";
-				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
-
-				obj.src = altSrc;
-			},
-			defaultMemberImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_130";
-				if(width > 0 && width <= 40){
-					thumbType = "_40";
-				} else if(width > 40 && width <= 54){
-					thumbType = "_54";
-				} else if(width > 54 && width <= 72){
-					thumbType = "_72";
-				} else if(width > 72 && width <= 96){
-					thumbType = "_96";
-				} else if(width > 96 && width <= 112){
-					thumbType = "_112";
-				} else if(width > 112){
-					thumbType = "_130";
-				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noUser" + thumbType + ".jpg";
-
-				obj.src = altSrc;
-			},
-			defaultPhotoImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_200";
-/* 				if(width > 0 && width <= 60){
-					thumbType = "_60";
-				} else if(width > 60 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200 && width <= 300){
-					thumbType = "_300";
-				} else if(width > 300 && width <= 500){
-					thumbType = "_500";
-				} else if(width > 500){
-					thumbType = "_700";
-				} */
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
-
-				obj.src = altSrc;
 			}
-		}
-		,WEBELLIPSIS = {
-			ellipsis : function(ellipsisName,moreClassName,eWidth){
-		        //아티스트 더보기
-		        var arObj = $('.' + ellipsisName);
-		        for(var i = 0; i < arObj.length; i++){
-		            if (arObj.eq(i).width() > eWidth ){
-		                arObj.eq(i).parent().parent().parent().find('.' + moreClassName).show();
-		            }
-		        }
-			}
-		}
-	})();
+				, WEBELLIPSIS = {
+					ellipsis: function (ellipsisName, moreClassName, eWidth) {
+						//아티스트 더보기
+						var arObj = $('.' + ellipsisName);
+						for (var i = 0; i < arObj.length; i++) {
+							if (arObj.eq(i).width() > eWidth) {
+								arObj.eq(i).parent().parent().parent().find('.' + moreClassName).show();
+							}
+						}
+					}
+				}
+		})();
 	</script>
 
 </head>
+
 <body>
 	<!-- header -->
-	<div id="header" class="">
-		<div id="header_wrap" class="my_fold">  
-			<div id="gnb" class="clfix">
-				<!-- 상단 빠른 메뉴 -->
-				<div id="util_menu">
-					<p class="none">상단 빠른 메뉴</p>
-					<div class="top_right ">
-						<ul class="clfix">
-							
-							<li><a href="/new_event" title="이벤트" class="menu03 mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=B03&amp;ACTION_AF_CLICK=V1"><span>이벤트</span></a></li>
-
-                            <li class="last_child"><a href="/new_notice" title="공지사항" class="menu04 mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=V02&amp;ACTION_AF_CLICK=V1"><span>공지사항</span></a></li>
-						</ul>
-
-                        <script type="text/javascript">
-
-
-     
-                        </script><div class="header_login"><span class="icon_logon"></span> </span> <span class="wrap_id"><a href=""><strong>{{session['name']}}</strong></a>님</span><button type="button" title="로그아웃" class="btn_top_logout" onclick="javascript:logout('','https://help.melon.com/web/customer/help/index.htm');"><img src="//cdnimg.melon.co.kr/resource/image/web/common/btn_top_logout.png" width="40" height="12" alt="로그아웃"></button></div>
-
-	                  </div>
-					<!-- //140603_수정 -->
-				</div>
-			
-				<!-- 배너 영역 -->
-				<div class="cmn_banner">
-
-					<a href="/top" title="12/20~12/31 겨울 행사 이벤트 - 페이지 이동" class="d_item mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=Z04&amp;ACTION_AF_CLICK=V1&amp;CLICK_CONTS_TYPE_CODE=&amp;CLICK_CONTS_ID=&amp;PROMO_CONTS_TYPE_CODE=&amp;PROMO_CONTS_ID=&amp;PROMO_SEQ=179921&amp;PROMO_DTL_SEQ=1" style="display: inline;">
-						<img width="230" height="100" src="" alt="">
-				</a>
-				
-				<a href="/top" title="12/20~12/31 겨울 행사 이벤트 - 페이지 이동" class="d_item mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=Z04&amp;ACTION_AF_CLICK=V1&amp;CLICK_CONTS_TYPE_CODE=&amp;CLICK_CONTS_ID=&amp;PROMO_CONTS_TYPE_CODE=&amp;PROMO_CONTS_ID=&amp;PROMO_SEQ=179921&amp;PROMO_DTL_SEQ=1" style="display: inline;">
-						<img width="230" height="100" src="" alt="">
-				</a>
-				<a href="/top" title="12/20~12/31 겨울 행사 이벤트 - 페이지 이동" class="d_item mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=Z04&amp;ACTION_AF_CLICK=V1&amp;CLICK_CONTS_TYPE_CODE=&amp;CLICK_CONTS_ID=&amp;PROMO_CONTS_TYPE_CODE=&amp;PROMO_CONTS_ID=&amp;PROMO_SEQ=179921&amp;PROMO_DTL_SEQ=1" style="display: inline;">
-						<img width="230" height="100" src="" alt="">
-				</a>
-				<a href="/top" title="12/20~12/31 겨울 행사 이벤트 - 페이지 이동" class="d_item mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=Z04&amp;ACTION_AF_CLICK=V1&amp;CLICK_CONTS_TYPE_CODE=&amp;CLICK_CONTS_ID=&amp;PROMO_CONTS_TYPE_CODE=&amp;PROMO_CONTS_ID=&amp;PROMO_SEQ=179921&amp;PROMO_DTL_SEQ=1" style="display: inline;">
-						<img width="230" height="100" src="" alt="">
-					</a>
-</div>
-</div>
-			<!-- //location -->
-		</div>
-	</div>
 
 	<!-- //header -->
 
 	<div id="cont_wrap" class="clfix">
 		<div id="conts_section" class="my_fold">
 			<!-- contents -->
-			
-
-
-<!-- 로그 엘리먼트 영역-->
-<div style="display:none !important;" data-logging="https://log.melon.com/pv?log=@CR2@%5E@CR3@%5E@CR4@%5E%5E1000001784%5E@CR1@%5E@CR5@%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E" menu-id="1000001784"></div>
-
-<!-- contents(고객 센터 관련 내용 포함) -->
-<div id="conts">
-	
-<!-- 고객센터 공통 메뉴  start-->	
-<h2 class="f_tit mb20">고객지원센터
-	<!-- MELONUIT-493 190528 -->
-	<span class="kakao_cs_box">
-
-	</span>
-	<!-- // MELONUIT-493 190528 -->
-</h2>
-<div class="wrap_tab03 type05">
-	<ul>
-		
-		
-		<li class="first_child"><a href="/" class="link_tab" title="홈 - 페이지 이동">
-			<span class="cntt">홈</span>
-		</a></li>
-		<li><a href="/new_notice" class="link_tab" title="공지사항 - 페이지 이동">
-			<span class="cntt">공지사항</span>
-		</a></li>
-		<li><a href="/new_event" class="link_tab" title="나의 문의 내역 - 페이지 이동">
-			<span class="cntt">이벤트</span>
-		</a></li>
-		<li><a href="/aaa" class="link_tab" title="자주하는 질문 - 페이지 이동">
-			<span class="cntt">자주 하는 질문</span>
-		</a></li>
-		<li class="on"><a href="/new_chat" class="link_tab" title="나의 문의 내역 - 페이지 이동">
-			<span class="cntt">나의 문의 내역</span>
-		</a></li>
-
-	</ul>
-</div>
-	
-	<!-- 고객센터 공통 메뉴  end -->
-	<div class="sort_info mt20">
-		<div class="wrap_sort">
-			<a href="javascript:;" title="1:1 문의 보기" class="ico_radio on" data-conts-type="" id="c"><span class="icon"></span><span class="text"><span>1:1 문의</span></span></a>
-			<a href="javascript:;" title="결제 오류신고 보기" class="ico_radio" data-conts-type="music_b" id="b"><span class="icon"></span><span class="text"><span>결제 오류신고</span></span></a>
-			<a href="javascript:;" title="사전 신청 보기" class="ico_radio" data-conts-type="music_a" id="a"><span class="icon"></span><span class="text"><span>사전 신청</span></span></a>
-		</div>
-	</div>
-	<div id="pageList" class="tb_list02 type02 mt10">
-		
-
-		<table border="1" style="width: 100%">
-			<caption>
-				<span>이 표는 나의 문의 내역 리스트로 순서, 대분류, 중분류, 제목, 상태, 등록일 내용을 포함하고 있으며 표 하단에 제공하는 1:1문의하기 기능을 이용하실 수 있습니다.</span>
-			</caption>
-			<colgroup><col style="width:54px"><col style="width:92px"><col style="width:111px"><col><col style="width:130px"><col style="width:100px"></colgroup>
-			<thead>
-				<tr class="first_child">
-					<th scope="col"><div class="wrap pd_none">순서</div></th>
-					<!--<th scope="col" class="t_center"><div class="wrap">대분류</div></th>-->
-					<th scope="col" class="t_center" colspan="2"><div class="wrap">분류</div></th>
-					<th scope="col"><div class="wrap">제목</div></th>
-					<th scope="col"><div class="wrap">상태</div></th>
-					<th scope="col"><div class="wrap">등록일</div></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="">
-					<td colspan="6" class="no_bg">
-						<div class="wrap">
-							<div class="search_ynlk">
-								<p class="tit">문의 내역이 없습니다.</p>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-
-		</table>
-	<form name="ForAnswer" method="get" action="">
-		<input type="hidden" name="questionId" value="">
-		<input type="hidden" name="error_id" value="">
-		<input type="hidden" name="request_id" value="">
-		<input type="hidden" name="startIndex" value="1">
-		<input type="hidden" name="status" value="">
-		
-	</form>
-<script type="text/javascript">
-$(document).ready(function(){
-$('#pageObjNavgation').html("")
-});
-</script>
-
-<!-- 화면 내부 전용 스크립트 -->
-<script type="text/javascript">
-	$(document).ready(function(){
 
 
 
-	});
+			<!-- 로그 엘리먼트 영역-->
+			<div style="display:none !important;"
+				data-logging="https://log.melon.com/pv?log=@CR2@%5E@CR3@%5E@CR4@%5E%5E1000001784%5E@CR1@%5E@CR5@%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E"
+				menu-id="1000001784"></div>
 
-	//내용보기
- 	function goAnswer(num, flag, status) {
- 		if(flag == "1"){
- 			//사전신청
- 			document.ForAnswer.action = "/web/customer/help/musicRequestAnswer.htm";
-			document.ForAnswer.request_id.value = num;
- 		}else if(flag == "2"){
- 			//결제오류
- 			document.ForAnswer.action = "/web/customer/help/musicErrorAnswer.htm";
-			document.ForAnswer.error_id.value = num;
- 		}else{
- 			//1:1문의
-	 		document.ForAnswer.action = "/web/customer/help/exMailAnswer.htm";
-			document.ForAnswer.questionId.value = num;
-			document.ForAnswer.status.value = status;
- 		}
-	  	document.ForAnswer.submit();
-	}
-	</script>
-	</div>
-	<div class="btn_wrap t_left down48">
-		<button type="button" class="btn btn_big" onclick="javascript:goHelp();" title="1:1문의하기 버튼 - 페이지 이동">
-			<span class="odd_span"><span class="even_span">1:1문의하기</span></span>
-		</button>
-	</div>
-	<div class="paginate">
-		<div id="pageObjNavgation" style="display: none;"></div>
-<script src="/resource/script/common/jquery.ba-bbq.min.js" type="text/javascript"></script>
-<script src="/resource/script/common/historypager.js" type="text/javascript"></script>
-<script type="text/javascript">
-var pageObj = new Pagination('/web/customer/help/listPaging.htm', 'pageList', 'pageObjNavgation', '10', 'pageObj', false);
-</script>
+			<!-- contents(고객 센터 관련 내용 포함) -->
+			<div id="conts">
 
-	</div>
-	<form name="questionForm" method="get" action="/new_chat2">
-		<input type="hidden" name="type" value="">
-    </form>
-</div>
+				<!-- 고객센터 공통 메뉴  start-->
+				<h2 class="f_tit mb20">고객지원센터
+					<!-- MELONUIT-493 190528 -->
+					<span class="kakao_cs_box">
 
-<!-- //contents -->
-	<!-- 전체 공통 스크립트 -->
-	
-	<script type="text/javascript">
-		var httpWww = "";
-		var httpsWww = "";
-		var POC_ID = "WP10";
-		var deployPhase = "";
-	</script>
+					</span>
+					<!-- // MELONUIT-493 190528 -->
+				</h2>
+				<div class="wrap_tab03 type05">
+					<ul>
+						<li><a href="/new_notice" class="link_tab" title="공지사항 - 페이지 이동">
+								<span class="cntt">공지사항</span>
+							</a></li>
+						<li><a href="/new_event" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+								<span class="cntt">이벤트</span>
+							</a></li>
+						<li class="on"><a href="/new_chat" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+								<span class="cntt">나의 문의 내역</span>
+							</a></li>
 
-	<script type="text/javascript" src="https://www.melon.com/resource/script/web/common/melonweb_openlib.js"></script>
-	<script type="text/javascript" src="https://www.melon.com/resource/script/web/common/melonweb_comm.js#/resource/script/w1/jl/7/mt2yrkjrg8wadm0bh.js"></script>
-	<script type="text/javascript" src="https://www.melon.com/resource/script/web/common/melonweb_comm_ajax.js#/resource/script/w1/n0/d/wqwlj1e4nijw.js"></script>
-	<script type="text/javascript" src="https://www.melon.com/resource/script/web/common/melonweb_svc.js#/resource/script/w1/lz/8/lf0qhfuhfz4e1j.js"></script>
-	<script type="text/javascript" src="https://www.melon.com/resource/script/web/cm/common/melonweb_cm.js#/resource/script/w1/ne/r/1o73q9fll6x.js"></script>
-	<script type="text/javascript" src="//log.melon.com/mlog.js"></script>
-	<script type="text/javascript" src="https://cdnimg.melon.co.kr/statistics/js/pvlog.js"></script>
+					</ul>
+				</div>
 
-	<script type="text/javascript">
-		var melon = MELON.WEBSVC.POC;
+				<!-- 고객센터 공통 메뉴  end -->
+				<div class="sort_info mt20">
+					<div class="wrap_sort">
+						<a href="javascript:;" title="1:1 문의 보기" class="ico_radio on" data-conts-type="" id="c"><span
+								class="icon"></span><span class="text"><span>1:1 문의</span></span></a>
+						<a href="javascript:;" title="결제 오류신고 보기" class="ico_radio" data-conts-type="music_b"
+							id="b"><span class="icon"></span><span class="text"><span>결제 오류신고</span></span></a>
+						<a href="javascript:;" title="사전 신청 보기" class="ico_radio" data-conts-type="music_a" id="a"><span
+								class="icon"></span><span class="text"><span>사전 신청</span></span></a>
+					</div>
+				</div>
+				<div id="pageList" class="tb_list02 type02 mt10">
 
-		document.domain="melon.com";
-	</script>
-	<!-- 해당 메뉴 관련 공통 스크립트 -->
-	<script type="text/javascript" src="/resource/web/customer/js/melonweb_customer.js"></script>
-	<!-- 화면 내부 전용 스크립트 -->
-	<script type="text/javascript">
-	$(document).ready(function(){
-		"use strict";
 
-		var WEBSVC = MELON.WEBSVC,
-			PBPGN = MELON.PBPGN;
+					<table border="1" style="width: 100%">
+						<caption>
+							<span>이 표는 나의 문의 내역 리스트로 순서, 대분류, 중분류, 제목, 상태, 등록일 내용을 포함하고 있으며 표 하단에 제공하는 1:1문의하기 기능을 이용하실
+								수 있습니다.</span>
+						</caption>
+						<colgroup>
+							<col style="width:54px">
+							<col style="width:92px">
+							<col style="width:111px">
+							<col>
+							<col style="width:130px">
+							<col style="width:100px">
+						</colgroup>
+						<thead>
+							<tr class="first_child">
+								<th scope="col">
+									<div class="wrap pd_none">순서</div>
+								</th>
+								<!--<th scope="col" class="t_center"><div class="wrap">대분류</div></th>-->
+								<th scope="col" class="t_center" colspan="2">
+									<div class="wrap">분류</div>
+								</th>
+								<th scope="col">
+									<div class="wrap">제목</div>
+								</th>
+								<th scope="col">
+									<div class="wrap">상태</div>
+								</th>
+								<th scope="col">
+									<div class="wrap">등록일</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="">
+								<td colspan="6" class="no_bg">
+									<div class="wrap">
+										<div class="search_ynlk">
+											<p class="tit">문의 내역이 없습니다.</p>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
 
-		// 디자인된 라디오 버튼
-		$('a.ico_radio').on('click', function(e){
-			e.preventDefault();
-			var $me = $(this);
-			$me.activeRow('on');
+					</table>
+					<form name="ForAnswer" method="get" action="">
+						<input type="hidden" name="questionId" value="">
+						<input type="hidden" name="error_id" value="">
+						<input type="hidden" name="request_id" value="">
+						<input type="hidden" name="startIndex" value="1">
+						<input type="hidden" name="status" value="">
 
-			changeCategory($me.attr('data-conts-type'));
-		});
+					</form>
+					<script type="text/javascript">
+						$(document).ready(function () {
+							$('#pageObjNavgation').html("")
+						});
+					</script>
 
-		if('' == 'music_a'){
-			$("#a").addClass("on");
-		}else if('' == 'music_b'){
-			$("#b").addClass("on");
-		}else{
-			$("#c").addClass("on");
-		}
-		pageObj.addParam("type", "");
-		
-		var totCnt = "0";
-		if(totCnt > 10){
-			$("#pageObjNavgation").show();
-		}
-	});
+					<!-- 화면 내부 전용 스크립트 -->
+					<script type="text/javascript">
+						$(document).ready(function () {
 
-	//문의하기
- 	function goHelp(){
- 		document.questionForm.submit();
- 	}
 
- 	//분류변경
- 	function changeCategory(param){
- 		document.questionForm.type.value = param;
-	    if ( param == 'shop' ) {
-	    	location.href = "http://faq2.melon.com/customer/store_list.htm?type="+param;
-	    } else {
-		    location.href="/web/customer/help/index.htm?type="+param;
-	    }
- 	}
-	</script>
-	<script src="/resource/web/customer/js/historypager.js" type="text/javascript"></script>
-	<script src="/resource/web/customer/js/jquery.ba-bbq.min.js?tm=20160526" type="text/javascript"></script>
+
+						});
+
+						//내용보기
+						function goAnswer(num, flag, status) {
+							if (flag == "1") {
+								//사전신청
+								document.ForAnswer.action = "/web/customer/help/musicRequestAnswer.htm";
+								document.ForAnswer.request_id.value = num;
+							} else if (flag == "2") {
+								//결제오류
+								document.ForAnswer.action = "/web/customer/help/musicErrorAnswer.htm";
+								document.ForAnswer.error_id.value = num;
+							} else {
+								//1:1문의
+								document.ForAnswer.action = "/web/customer/help/exMailAnswer.htm";
+								document.ForAnswer.questionId.value = num;
+								document.ForAnswer.status.value = status;
+							}
+							document.ForAnswer.submit();
+						}
+					</script>
+				</div>
+				<div class="btn_wrap t_left down48">
+					<button type="button" class="btn btn_big" onclick="javascript:goHelp();"
+						title="1:1문의하기 버튼 - 페이지 이동">
+						<span class="odd_span"><span class="even_span">1:1문의하기</span></span>
+					</button>
+				</div>
+				<div class="paginate">
+					<div id="pageObjNavgation" style="display: none;"></div>
+					<script src="/resource/script/common/jquery.ba-bbq.min.js" type="text/javascript"></script>
+					<script src="/resource/script/common/historypager.js" type="text/javascript"></script>
+					<script type="text/javascript">
+						var pageObj = new Pagination('/web/customer/help/listPaging.htm', 'pageList', 'pageObjNavgation', '10', 'pageObj', false);
+					</script>
+
+				</div>
+				<form name="questionForm" method="get" action="/new_chat2">
+					<input type="hidden" name="type" value="">
+				</form>
+			</div>
+
+			<!-- //contents -->
+			<!-- 전체 공통 스크립트 -->
+
+			<script type="text/javascript">
+				var httpWww = "";
+				var httpsWww = "";
+				var POC_ID = "WP10";
+				var deployPhase = "";
+			</script>
+
+			<script type="text/javascript"
+				src="https://www.melon.com/resource/script/web/common/melonweb_openlib.js"></script>
+			<script type="text/javascript"
+				src="https://www.melon.com/resource/script/web/common/melonweb_comm.js#/resource/script/w1/jl/7/mt2yrkjrg8wadm0bh.js"></script>
+			<script type="text/javascript"
+				src="https://www.melon.com/resource/script/web/common/melonweb_comm_ajax.js#/resource/script/w1/n0/d/wqwlj1e4nijw.js"></script>
+			<script type="text/javascript"
+				src="https://www.melon.com/resource/script/web/common/melonweb_svc.js#/resource/script/w1/lz/8/lf0qhfuhfz4e1j.js"></script>
+			<script type="text/javascript"
+				src="https://www.melon.com/resource/script/web/cm/common/melonweb_cm.js#/resource/script/w1/ne/r/1o73q9fll6x.js"></script>
+			<script type="text/javascript" src="//log.melon.com/mlog.js"></script>
+			<script type="text/javascript" src="https://cdnimg.melon.co.kr/statistics/js/pvlog.js"></script>
+
+			<script type="text/javascript">
+				var melon = MELON.WEBSVC.POC;
+
+				document.domain = "melon.com";
+			</script>
+			<!-- 해당 메뉴 관련 공통 스크립트 -->
+			<script type="text/javascript" src="/resource/web/customer/js/melonweb_customer.js"></script>
+			<!-- 화면 내부 전용 스크립트 -->
+			<script type="text/javascript">
+				$(document).ready(function () {
+					"use strict";
+
+					var WEBSVC = MELON.WEBSVC,
+						PBPGN = MELON.PBPGN;
+
+					// 디자인된 라디오 버튼
+					$('a.ico_radio').on('click', function (e) {
+						e.preventDefault();
+						var $me = $(this);
+						$me.activeRow('on');
+
+						changeCategory($me.attr('data-conts-type'));
+					});
+
+					if ('' == 'music_a') {
+						$("#a").addClass("on");
+					} else if ('' == 'music_b') {
+						$("#b").addClass("on");
+					} else {
+						$("#c").addClass("on");
+					}
+					pageObj.addParam("type", "");
+
+					var totCnt = "0";
+					if (totCnt > 10) {
+						$("#pageObjNavgation").show();
+					}
+				});
+
+				//문의하기
+				function goHelp() {
+					document.questionForm.submit();
+				}
+
+				//분류변경
+				function changeCategory(param) {
+					document.questionForm.type.value = param;
+					if (param == 'shop') {
+						location.href = "http://faq2.melon.com/customer/store_list.htm?type=" + param;
+					} else {
+						location.href = "/web/customer/help/index.htm?type=" + param;
+					}
+				}
+			</script>
+			<script src="/resource/web/customer/js/historypager.js" type="text/javascript"></script>
+			<script src="/resource/web/customer/js/jquery.ba-bbq.min.js?tm=20160526" type="text/javascript"></script>
 			<!-- //contents -->
 		</div>
 	</div>
 
-</div>
+	</div>
 </body>
+
 </html>
