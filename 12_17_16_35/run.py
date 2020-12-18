@@ -24,16 +24,12 @@ def signup():
         name     = request.form.get('name')
         gender   = request.form.get('gender')
         address  = request.form.get('address')
-        
+        # print(gender)
         user = db_signupUsers(uid, upw, name, gender, address)
         if user:
             return render_template('alert2.html')
         else:        
             return redirect( url_for('home') )   
-
-    # 렌더링시 데이터를 전달하고 싶으면 키=값 형태로 파라미터를 추가
-    # **kargs
-    return render_template('loginindex.html', name='사용자명')
 
 
 # 로그인 #

@@ -1,8 +1,6 @@
-
 import pymysql as my
 
-
-
+# 로그인 함수
 def db_selectLogin(uid, upw):
     conn = None
     row  = None
@@ -32,14 +30,15 @@ def db_selectLogin(uid, upw):
     # 연결오류, 아이디비번 불일치 -> None
     return row
 
-def db_signupUsers(uid, upw, name):
+# 회원가입 함수
+def db_signupUsers(uid, upw, name, gender, address):
     conn   = None
     result = 0
     try:
         conn = my.connect(host='localhost',
                           user='root',
                           password='12341234',
-                          db='python_db',
+                          db='mini_project',
                           charset='utf8mb4',
                           cursorclass=my.cursors.DictCursor
                           )
@@ -47,8 +46,8 @@ def db_signupUsers(uid, upw, name):
 
         with conn.cursor() as cursor:
             # 파라미터를 무조건 execute()를 통해서 넣을 필요는 없다
-            sql = '''  INSERT INTO users (uid, upw, name) VALUES (%s, %s, %s);  '''
-            cursor.execute(sql, (uid, upw, name))
+            sql = '''  INSERT INTO users (uid, upw, name, gender, address) VALUES (%s, %s, %s, %s, %s);  '''
+            cursor.execute(sql, (uid, upw, name, gender, address))
 
             conn.commit() # 커밋 -> 실반영 -> 성공/실패 여부를 알수 있다
             result = conn.affected_rows() # 영향을 받은수 => 0 or 1 <=
@@ -61,9 +60,7 @@ def db_signupUsers(uid, upw, name):
 
     return result
 
-# 종목 코드를 넣어서 해당 종목 1개의 상세정보를 가져온다
-
-
+# 상품 넣기 함수
 def db_insertProduct(top_name, top_size, uid, upw,):
     result = None   
     conn = None   
