@@ -48,6 +48,8 @@ def login():
             session['uid'] = user['uid'] 
             session['upw'] = user['upw'] 
             session['name'] = user['name'] 
+            session['gender'] = user['gender'] 
+            session['address'] = user['address'] 
             return redirect('/indexlogin')
             pass
         else:
