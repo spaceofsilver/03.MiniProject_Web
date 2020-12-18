@@ -1,0 +1,165 @@
+<body class="w3-light-grey">
+    <form method="post">
+        <div class="content-wrapper">
+            <!-- Page Container -->
+            <div class="w3-content w3-margin-top" style="max-width:1600px;">
+                <!-- The Grid -->
+                <div class="w3-row-padding">
+
+                    <!-- Left Column -->
+                    <div class="w3-third">
+                        <div class="w3-white w3-text-grey w3-card-4">
+                            <div class="w3-display-container">
+                                <img src="static/products/acc1.jpg" style="width:100%;" alt="top1" name='top_image'>
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-text-black">
+                                    <h3>[BLUE ELEPHANT]</h3>
+                                    <h4>TED silver-black</h4>
+                                </div>
+                                <br>
+                                <p><b>BLUE ELEPHANT</b></p>
+                                <p><b>시즌</b> 2020FW</p>
+                                <p><b>성별</b> 공용</p>
+                                <hr>
+
+                                <p class="w3-large"><b><i
+                                            class="fa fa-asterisk fa-fw w3-margin-right w3-text-light-blue"></i>고객만족도</b>
+                                </p>
+                                <p>실용성</p>
+                                <div class="w3-light-grey w3-round-xlarge w3-small">
+                                    <div class="w3-container w3-center w3-round-xlarge w3-light-blue" style="width:85%">
+                                        85%
+                                    </div>
+                                </div>
+                                <p>편리성</p>
+                                <div class="w3-light-grey w3-round-xlarge w3-small">
+                                    <div class="w3-container w3-center w3-round-xlarge w3-light-blue" style="width:92%">
+                                        92%
+                                    </div>
+                                </div>
+                                <p>재질</p>
+                                <div class="w3-light-grey w3-round-xlarge w3-small">
+                                    <div class="w3-container w3-center w3-round-xlarge w3-light-blue" style="width:80%">
+                                        80%
+                                    </div>
+                                </div>
+                                <p>가격</p>
+                                <div class="w3-light-grey w3-round-xlarge w3-small">
+                                    <div class="w3-container w3-center w3-round-xlarge w3-light-blue" style="width:69%">
+                                        69%
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                            </div>
+                        </div><br>
+
+                        <!-- End Left Column -->
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="w3-twothird">
+                        <!-- 상품 정보 & 선택 -->
+                        <div class="w3-container w3-card w3-white w3-margin-bottom">
+                            <h2 class="w3-text-grey w3-padding-16" id='top_name'>TED silver-black</h2>
+
+                            <div class="w3-container">
+                                <h5 class="w3-opacity"><b>지금 주문시 배송예정일</b></h5>
+                                <h6 class="w3-text-light-blue"><i class="fa fa-calendar fa-fw w3-margin-right"></i>29일
+                                    도착</h6>
+                                <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur
+                                    est
+                                    reprehenderit
+                                    sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.
+                                </p>
+                                <hr>
+                            </div>
+                            <div class="w3-container">
+                                <h5 class="w3-opacity"><b>BLUE ELEPHANT</b></h5>
+                                <h6 class="w3-text-teal">Since 2017</h6>
+                                <p>BLUE ELEPHANT (블루엘리펀트)는 상상가(imagineer)의 창의성을 상징하는 'BLUE ELEPHANT'는
+                                    크리에이티브를 추구하며 1970's의 아메리칸 클래식과 빈티지를 모티브로 뮤즈, 아이콘, 패션피플,
+                                    아티스트들과의 협업을 통해 다양한 분야에서 영감을 얻어 현대적으로 재해석한 컨템포러리 아이웨어 브랜드입니다.
+                                </p>
+                                <hr>
+                            </div>
+
+                            <div class="w3-container ">
+                                <!-- 옵션 선택 버튼 -->
+
+                                <div class="option_box_grey box_option_inventory">
+                                    <div id="goods_opt_area" class="option_cont">
+                                        <!-- 상품 옵션 선택(고정) -->
+
+                                        <select id="option1" name="option1" class="option1">
+                                            <option>TED silver-black</option>
+                                        </select>
+                                        <!-- 사이즈 옵션 선택 -->
+                                        <select id="option2" name="option2" class="option2"
+                                            onchange="prepareOrder.selectOption('624932','0', '1', '0', '3', '', '1', '999', this)">
+                                            <option value="" selected="selected">사이즈 선택</option>
+                                            <option value="free" data-txt="free" jaego_yn="Y">free</option>
+                                        </select>
+                                        <input name='to_cart' type="submit" class="btn btn-default btn-sm"
+                                            value="장바구니 담기" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <!-- // 상품 정보 -->
+
+                        <!-- 사이즈 정보 -->
+                        <div class="w3-container w3-card w3-white w3-margin-bottom">
+                            <div class="box_material">
+                                <!--사이즈정보-->
+                                <h2 class="w3-text-grey w3-padding-16"><span class="korSub">사이즈 정보</span></h2>
+                                <table class="table_th_grey">
+                                    <thead>
+                                        <tr>
+                                            <th>사이즈</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Free</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <div class="product-note-box">
+                                    <i class="ic-30-stencil-exclamation"></i>
+                                    <ul class="n-info-txt">
+                                        <li>하단의 상품 상세 설명란의 사이즈표는 업체 기준 측정입니다.</li>
+                                        <li>모니터해상도, 컬러설정에 따라 제품이 왜곡되거나 컬러가 다르게 보일 수 있습니다.</li>
+                                        <li>사이즈 실측의 경우 제품의 특성및 측정방식에 따라 오차가 발생할 수 있습니다.</li>
+                                    </ul>
+                                </div>
+                                <!--//사이즈정보-->
+                            </div>
+                        </div>
+                        <!--  //사이즈 정보-->
+
+                        <!-- End Right Column -->
+                        <!-- End Grid -->
+                    </div>
+
+                    <!-- End Page Container -->
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        $('[name=to_cart]').on('click', (event) => {
+            alert('로그인을 먼저 해주세요!')
+        })
+        $('#option1').val()
+        console.log($('#option1').val())
+// option2는 클릭을 한 후에 알 수 있는 값이기 때문에 콘솔창에 안 뜬다.
+    </script>
+</body>
+
+</html>

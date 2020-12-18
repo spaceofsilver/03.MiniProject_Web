@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+
+<head>
+  {% include "bf_public/head.html" %}
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    {% include "bf_public/nav.html" %}
+    {% include "bf_public/menu.html" %}
+    {% include "bf_subPages/pants.html" %}
+    {% include "bf_public/footer.html" %}
+    {% include "bf_public/aside.html"  %}
+
+
+
+</div>
+{% include "bf_public/js.html" %}
+
+</body>
+
+</html>

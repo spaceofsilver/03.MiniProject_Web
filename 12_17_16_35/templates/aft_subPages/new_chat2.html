@@ -1,0 +1,856 @@
+<html lang="ko" class="narrow-screen">
+<head>
+		
+	<link rel="stylesheet" href="https://static.melon.co.kr/static/web/resource/style/w1/76/e/bvi69ssvs0qsit.css" type="text/css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script type="text/javascript">
+	var helpDomain = 'https://help.melon.com';
+	var memberDomain = 'https://member.melon.com';
+
+	(function() {
+		WEBPOCIMG = {
+			defaultImg : function(obj){
+			},
+			defaultAlbumImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
+
+				var thumbType = "_500";
+				if(width > 0 && width <= 38){
+					thumbType = "_38";
+				} else if(width > 38 && width <= 52){
+					thumbType = "_52";
+				} else if(width > 52 && width <= 70){
+					thumbType = "_70";
+				} else if(width > 70 && width <= 114){
+					// thumbType = "_114";
+					thumbType = "_120";
+				} else if(width > 114 && width <= 120){
+					thumbType = "_120";
+				} else if(width > 120 && width <= 200){
+					thumbType = "_200";
+				} else if(width > 200){
+					thumbType = "_500";
+				}
+
+				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
+
+				obj.src = altSrc;
+			},
+			defaultArtistImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
+
+				var thumbType = "_300";
+				if(width > 0 && width <= 34){
+					thumbType = "_34";
+				} else if(width > 34 && width <= 40){
+					thumbType = "_40";
+				} else if(width > 40 && width <= 54){
+					thumbType = "_54";
+				} else if(width > 54 && width <= 70){
+					thumbType = "_70";
+				} else if(width > 70 && width <= 100){
+					thumbType = "_100";
+				} else if(width > 100 && width <= 120){
+					thumbType = "_120";
+				} else if(width > 120 && width <= 160){
+					thumbType = "_160";
+				} else if(width > 160 && width <= 200){
+					thumbType = "_200";
+				} else if(width > 200 && width <= 300){
+					thumbType = "_300";
+				}
+
+				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + ".jpg";
+
+				obj.src = altSrc;
+			},
+			defaultDjImg : function(obj){
+			},
+			defaultMvImg : function(obj, width, height){
+				if(width == null || width == '') width = $(obj).width();
+				if(height == null || height == '') height = $(obj).height();
+
+				var ratio43 = Math.floor((4/3)*10)/10;
+				var ratio169 = Math.floor((16/9)*10)/10;
+				var ratioObj = Math.floor((width/height)*10)/10;
+
+				var ratio = "4x3";
+				if(ratioObj == ratio43){
+					ratio = "4x3"; //contentsType = "mv43";
+				} else if(ratioObj == ratio169){
+					ratio = "16x9"; //contentsType = "mv169";
+				} else {
+					if(ratioObj > 1.5) ratio = "16x9";
+					else ratio = "4x3";
+				}
+
+				var thumbType = "_" + ratio + "_640";
+				if(width > 0 && width <= 60){
+					thumbType = "_" + ratio + "_60";
+				} else if(width > 60 && width <= 120){
+					thumbType = "_" + ratio + "_120";
+				} else if(width > 120 && width <= 144){
+					thumbType = "_" + ratio + "_144";
+				} else if(width > 144 && width <= 240){
+					thumbType = "_" + ratio + "_240";
+				} else if(width > 240 && width <= 480){
+					thumbType = "_" + ratio + "_480";
+				} else if(width > 480){
+					thumbType = "_" + ratio + "_640";
+				}
+
+				var altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noMovie" + thumbType + ".jpg";
+
+				obj.src = altSrc;
+			},
+			defaultPlaylistImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
+
+				var thumbType = "_500";
+				if(width > 0 && width <= 38){
+					thumbType = "_38";
+				} else if(width > 38 && width <= 52){
+					thumbType = "_52";
+				} else if(width > 52 && width <= 70){
+					thumbType = "_70";
+				} else if(width > 70 && width <= 114){
+					thumbType = "_114";
+				} else if(width > 114 && width <= 120){
+					thumbType = "_120";
+				} else if(width > 120 && width <= 200){
+					thumbType = "_200";
+				} else if(width > 200){
+					thumbType = "_500";
+				}
+
+				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
+
+				obj.src = altSrc;
+			},
+			defaultMemberImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
+
+				var thumbType = "_130";
+				if(width > 0 && width <= 40){
+					thumbType = "_40";
+				} else if(width > 40 && width <= 54){
+					thumbType = "_54";
+				} else if(width > 54 && width <= 72){
+					thumbType = "_72";
+				} else if(width > 72 && width <= 96){
+					thumbType = "_96";
+				} else if(width > 96 && width <= 112){
+					thumbType = "_112";
+				} else if(width > 112){
+					thumbType = "_130";
+				}
+
+				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noUser" + thumbType + ".jpg";
+
+				obj.src = altSrc;
+			},
+			defaultPhotoImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
+
+				var thumbType = "_200";
+/* 				if(width > 0 && width <= 60){
+					thumbType = "_60";
+				} else if(width > 60 && width <= 120){
+					thumbType = "_120";
+				} else if(width > 120 && width <= 200){
+					thumbType = "_200";
+				} else if(width > 200 && width <= 300){
+					thumbType = "_300";
+				} else if(width > 300 && width <= 500){
+					thumbType = "_500";
+				} else if(width > 500){
+					thumbType = "_700";
+				} */
+
+				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
+
+				obj.src = altSrc;
+			}
+		}
+		,WEBELLIPSIS = {
+			ellipsis : function(ellipsisName,moreClassName,eWidth){
+		        //아티스트 더보기
+		        var arObj = $('.' + ellipsisName);
+		        for(var i = 0; i < arObj.length; i++){
+		            if (arObj.eq(i).width() > eWidth ){
+		                arObj.eq(i).parent().parent().parent().find('.' + moreClassName).show();
+		            }
+		        }
+			}
+		}
+	})();
+	</script>
+
+</head>
+<body>
+	<!-- header -->
+			<div id="gnb" class="clfix">
+				<!-- 상단 빠른 메뉴 -->
+				<div id="util_menu">
+					<p class="none">상단 빠른 메뉴</p>
+					<!-- 140603_수정 -->
+					<div class="top_right ">
+						<ul class="clfix">
+							
+							<li><a href="/event" title="이벤트" class="menu03 mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=B03&amp;ACTION_AF_CLICK=V1"><span>이벤트</span></a></li>
+
+                            <li class="last_child"><a href="/notice" title="공지사항" class="menu04 mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=V02&amp;ACTION_AF_CLICK=V1"><span>공지사항</span></a></li>
+						</ul>
+
+                        <script type="text/javascript">
+
+                        </script><div class="header_login"><span class="icon_logon"></span> </span> <span class="wrap_id"><a href="javascript:location.href=_getHttpsMemberDomain()+ '/muid/web/help/myinfointro_inform.htm';" class="user_id"><fmt:formatNumber value="1234567.89"/></a>님</span><button type="button" title="로그아웃" class="btn_top_logout" onclick="javascript:logout('','https://help.melon.com/web/customer/help/index.htm');"><img src="//cdnimg.melon.co.kr/resource/image/web/common/btn_top_logout.png" width="40" height="12" alt="로그아웃"></button></div>
+                    </div>
+					<!-- //140603_수정 -->
+				</div>	
+				<!-- 배너 영역 -->
+				<div class="cmn_banner">
+
+
+			<!-- //location -->
+		</div>
+	</div>
+
+	<!-- //header -->
+	<div id="cont_wrap" class="clfix">
+		<div id="conts_section" class="my_fold">
+			<!-- contents -->
+			
+	
+	<!-- 로그 엘리먼트 영역-->
+	<div style="display:none !important;" data-logging="https://log.melon.com/pv?log=@CR2@%5E@CR3@%5E@CR4@%5E%5E1000001785%5E@CR1@%5E@CR5@%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E" menu-id="1000001785"></div>
+	
+	<!-- 내용 부분 -->
+	<div id="conts">
+		<!-- 고객센터 공통 메뉴  start-->
+		
+	<h2 class="f_tit mb20">고객지원센터</h2>
+	<div class="wrap_tab03 type05">
+		<ul>
+			
+			
+			<li class="first_child"><a href="/" class="link_tab" title="홈 - 페이지 이동">
+				<span class="cntt">홈</span>
+			</a></li>
+			<li><a href="/notice" class="link_tab" title="공지사항 - 페이지 이동">
+				<span class="cntt">공지사항</span>
+			</a></li>
+			<li><a href="/event" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+				<span class="cntt">이벤트</span>
+			</a></li>
+			<li><a href="/aaa" class="link_tab" title="자주하는 질문 - 페이지 이동">
+				<span class="cntt">자주 하는 질문</span>
+			</a></li>
+			<li class="on"><a href="/login" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+				<span class="cntt">나의 문의 내역</span>
+			</a></li>
+	
+		</ul>
+	</div>
+		
+		<!-- 고객센터 공통 메뉴  end -->
+		<div>
+			<h4><strong>1:1 문의하기</strong></h4><br>
+			<div class="tb_list04">
+				<table border="2" style="width:1008px;">
+					<caption>이 테이블은 1:1문의 작성양식을 제공합니다.</caption>
+					<colgroup>
+						<col style="width:167px;"><col><col style="width:167px;"><col style="338">
+					</colgroup>
+					<tbody>
+					<form name="Question" method="post" id="Question"></form>
+						<tr>
+							<th class="cate"><!-- cate클래스는 녹색 bg, ncsy클래스는 필수입력일때 -->
+								<div class="wrap"><span class="ncsy"> 필수 입력사항 </span>분류</div>
+							</th>
+							<td colspan="18">
+								<div>											
+										<label>
+											<input type="radio">
+											결제/교환/환불
+										</label>
+																				
+										<label class="chic_type01">
+											<input type="radio" name="cate1" value="50041" class="d_cate1">
+										할인권 문의
+										</label>
+																			
+										<label class="chic_type01">
+											<input type="radio" name="cate1" value="50052" class="d_cate1">
+											회원 정보
+										</label>
+																			
+										<label class="chic_type01">
+											<input type="radio" name="cate1" value="50065" class="d_cate1">
+											이벤트
+										</label>
+									
+										<label class="chic_type01">
+											<input type="radio" name="cate1" value="50076" class="d_cate1">
+											기타
+										</label>
+								</div>
+							</td>
+						</tr>
+	
+						<!-- 유저 아이디 구역 -->
+						<tr>
+							<th>
+								<div class="wrap">아이디</div>
+							</th>
+							<td colspan="3">
+								<div class="wrap">
+									<span class="name">_____</span>
+								</div>
+							</td>
+						</tr>
+						<!-- 유저 아이디 구역 -->
+	
+
+						<!-- 내용 구역 -->
+						<tr>
+							<th>
+								<div class="wrap"><span class="ncsy">필수 입력사항 </span>내용</div>
+							</th>
+							<td colspan="30">
+								<div>
+									<strong id="defaultContInfo">* 불필요한 개인 정보는 입력하지 마세요.</strong><br>
+									<textarea cols="90" rows="100">
+									해당 문제가 발생하는 화면을 캡쳐하여 첨부해주시면 보다 빠른 확인이 가능합니다.</textarea>
+								</div>
+							</td>
+						</tr>
+
+					
+					<form  action="/chat2" method="post" ></form>
+						<tr>
+							<th>
+								<div class="wrap">파일첨부</div>
+							</th>
+							<td colspan="30">
+								<div class="wrap">
+									<div>
+										<input type="file" onchange="addFile(document.kageFileUploadForm.file.value);" style="widows: 780px;" >
+										<iframe height="10" width="0"></iframe>
+									</div>
+									<div>
+										<div class="file_list" style="height: 90px;"></div>
+										<div class="ctrl_btn">
+											<p class="text_capa"><span id="file_size_box">0</span> KB</p>
+										</div>
+									</div>
+									<span>첨부파일은 log, txt, png, jpg, gif 의 형식만 가능하며, 총10MB까지 업로드 하실 수 있습니다.</span>
+								</div>
+							</td>
+						</tr>
+					
+					<form action="/chat2" method="post"></form>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="t_center mt24">
+				<button type="button" onclick="javascript:checkAttach();" class="btn_green_h30"><span class="odd_span"><span class="even_span">안녕</span></span></button>
+				<button type="button"><span class="odd_span"><span class="even_span">취소</span></span></button>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 페이지이동확인 레이어 팝업 -->
+	<div style="width:390px; display:none;">
+		<h1>확인</h1>
+		<div>
+			<div><p class="txt_emphs mb0">입력된 내용이 있습니다.</p></div>
+			<div><p class="txt_emphs mb0">이 페이지에서 벗어나시겠습니까?</p></div>
+			<div class="wrap_btn_c">
+				<button type="button" class="btn_emphs02_small" title="이 페이지 나가기" data-role="ok"><span class="odd_span"><span class="even_span">이 페이지 나가기</span></span></button>
+				<button type="button" class="btn_emphs02_small d_close" title="이 페이지 머무르기 버튼"><span class="odd_span"><span class="even_span">이 페이지 머무르기</span></span></button>
+			</div>
+		</div>
+		<button type="button" class="btn_close d_close" title="닫기 버튼"><span>닫기</span></button>
+		<span class="shadow"></span>
+	</div>
+	
+	<!-- //페이지이동확인 레이어 팝업 -->
+
+	<form name="listForm" method="post" action="/new_chat">
+		<input type="hidden" name="type" value="">
+	</form>
+	
+	<iframe name="UP_process" width="0" height="0" frameborder="0"></iframe>
+	<iframe name="qnaDelFrame" id="qnaDelFrame" height="0" width="0" frameborder="0"></iframe>
+	
+	<!-- //contents -->
+	
+
+	<!-- 화면 내부 전용 스크립트 -->
+	<script type="text/javascript">
+
+		 * 취소 버튼 이벤트
+		 */
+		$(document).on("click", "#cancleBtn", function() {
+			if(confirm("1:1 문의를 취소 하시겠습니까?")){
+				change = false;
+				location.href = "/chat2";
+			}
+		});
+	
+		/**
+		 * 메인카테고리 이벤트
+		 */
+		$(document).on("click", ".d_cate1", function() {
+			var mainCateId =  $(this).val();
+			$(".chic_type01").removeClass("on");
+			$(".chic_type02").removeClass("on");
+			$(this).parent().addClass("on");
+			getSubCateList(mainCateId, "");
+			getFaq(mainCateId);
+			dynamicObjectControl(mainCateId);
+		});
+	
+		/**
+		 * 서브카테고리 이벤트
+		 */
+		$(document).on("click", ".d_cate2", function() {
+	
+			var mainCateId = $(":input:radio[name=cate1]:checked").val();
+			var subCateId = $(this).val();
+	
+			$("#emailMesg").hide();
+			$(".chic_type02").removeClass("on");
+			$(this).parent().addClass("on");
+	
+			if(mainCateId=="50001") { // 서비스 문의/오류
+				if ($(this).hasClass("musicQna")) { // 음원 관련 문의
+					$("#emailMesg").show();
+					$(".d_file").hide();
+					$("#attachComment").hide();
+					$(".d_phone").hide();
+	
+					$("#requestOnService").hide();
+					$("#requestOnContent").show();
+	
+					if($(this).hasClass("music_a")){
+						$("#qna_music05").val(music_a);
+	
+						$("#url_area").show();
+						$("#content_area").hide();
+					} else if($(this).hasClass("music_b")){
+						$("#qna_music05").val(music_b);
+	
+						$("#url_area").hide();
+						$("#content_area").show();
+					}
+	
+				} else {
+					$(".d_file").show();
+					$("#attachComment").show();
+					$(".d_phone").show();
+					$("#content").val(qna);
+	
+					$("#requestOnService").show();
+					$("#requestOnContent").hide();
+				}
+			}
+	
+		});
+	
+		/**
+		 * 파일 삭제 이벤트
+		 */
+		$(document).on("click", ".deleteFile", function() {
+			delFile($(this));
+		});
+	
+	
+		 
+			// 텍스트 에어리어 글자수 제한
+			$('.d_textarea').textControl({
+				countType:'char',
+				counting: true,
+				limit: 1000,
+				allowPaste: true
+			});
+	
+		});
+	
+		$('#content').click(function(){
+			//중분류 확인
+			if($('input:radio[name="cate2"]:checked').length < 1){
+				alert('중분류를 선택해 주세요');
+				return;
+			}
+		});
+	
+		function checkAttach() {
+	
+			var f = document.Question;
+	
+			// 음원신청, 음원오류신고 판단
+			var cate1 = $('input:radio[name="cate1"]:checked').val();
+			var cate2 = $('input:radio[name="cate2"]:checked').val();
+	
+			//분류 확인
+			if($('input:radio[name="cate1"]:checked').length < 1){
+				alert('분류를 선택해 주세요');
+				return;
+			}
+	
+
+			//결제/해지/환불 카테고리 & 휴대폰정보 없는 경우
+			var hasPhoneInput = $('#phoneNo').length > 0 && cate1 == '50032';
+			if (hasPhoneInput) {
+				var phoneNo = $.trim($('#phoneNo').val());
+				$('#phoneNo').val(phoneNo);
+				if(phoneNo == ''){
+					alert('휴대폰 번호를 입력해주세요.');
+					$('#phoneNo').focus();
+					return;
+				}
+				var phoneNoRegExp = /^\d{3}\d{3,4}\d{4}$/;
+				if (!phoneNoRegExp.test(phoneNo)) {
+					alert("유효한 휴대폰 번호를 입력해주세요.");
+					$('#phoneNo').focus();
+					return;
+				}
+			}
+	
+			//내용
+			if($("#content").val() == ""){
+				alert('내용을 입력해 주세요');
+				$("#content").focus();
+				return;
+			}
+	
+			if (hasPhoneInput) {
+				if (!$('#agreeChk').is(':checked')) {
+					$('#notAgreeMsg').show();
+					return;
+				} else {
+					$('#notAgreeMsg').hide();
+				}
+			}
+	
+	
+			if ( cate2=="music_a"||cate2=="music_b")  {
+	
+				if( "" == $.trim($("#qna_music01").val())  && "" == $.trim($("#qna_music02").val())  ) {
+					alert("곡명 또는 앨범명 입력은 필수입니다.");
+					$("#qna_music01").focus();
+					return;
+				}
+	
+				if( "" == $.trim($("#qna_music03").val()) ) {
+					alert("아티스트명 입력은 필수입니다.");
+					$("#qna_music03").focus();
+					return;
+				}
+	
+				if( cate2=="music_b" && "" == $.trim($("#qna_music05").val()) ) {
+					alert('내용을 입력해 주세요');
+					$("#qna_music05").focus();
+					return;
+				}
+	
+			}
+	
+			if ( cate2=="music_a" &&
+				"" == $("#qna_music05").val()  ) {
+				alert('내용을 입력해 주세요');
+				$("#qna_music05").focus();
+				return;
+			}
+	
+			if(confirm("1:1 문의를 등록하시겠습니까?")){
+				// 중분류가 음원오류신고, 음원신청인 경우
+				if (cate2=="music_a"||cate2=="music_b"){
+					change = false;
+					var content = $("#content").val();
+					var subject = (($.trim($("#qna_music03").val()).length >0)? $.trim($("#qna_music03").val()) : "") +
+								  (($.trim($("#qna_music02").val()).length >0)? (" - "+$.trim($("#qna_music02").val())):"") +
+								  (($.trim($("#qna_music01").val()).length >0)? (" - "+$.trim($("#qna_music01").val())):"");
+					if(subject.length > 99){
+						subject = subject.substring(0,99);
+					}
+					//console.log(cate2);
+					$("#categoryId").val(cate2);
+					$("#subject").val(subject);
+					f.action = "/web/customer/help/connect.htm";
+					f.submit();
+				}else{
+					change = false;
+					insertCrms();
+				}
+			}
+	
+		}
+	
+		function insertCrms() {
+	
+			//첨부파일 정보 세팅
+			var fileArr = $('.uploadFile');
+			var content = $("#content").val();
+			var contentArr = content.split("\n");
+			var subject = contentArr[0];
+			var telNum = $('#phoneNo').val();
+			var phoneNoRegExp = /^\d{3}\d{3,4}\d{4}$/;
+			if (!phoneNoRegExp.test(telNum)) { // PCP placeholder > value 이슈 대응
+				telNum = '';
+			}
+	
+			if(subject.length > 99){
+				subject = subject.substring(0,99);
+			}
+	
+			data = {
+				categoryId : $('input:radio[name="cate2"]:checked').val(),
+				subject : subject,
+				content : content,
+				telNum : telNum,
+				appVersion : $("#appVersion").val(),
+				osVersion : $("#osVersion").val(),
+				deviceModel : "PC",
+				fileList : JSON.stringify(fileArray)
+			}
+	
+			$.ajax({
+				url  : "/web/customer/help/insertQna.json",
+				type : "GET",
+				dataType: 'json',
+				data : data,
+				success : function(result) {
+					if (result.status == '200') {
+						alert("문의하신 내용이 정상 접수 되었습니다.");
+						location.href = "/web/customer/help/index.htm";
+					} else if (result.status == '4037') {
+						alert("로그인이 필요한 서비스 입니다.");
+						location.href = 'https://member.melon.com/muid/web/login/login_inform.htm';
+					} else if (result.status == '4038') {
+						alert("잘못된 경로로 접근 하셨습니다.");
+					} else if (result.status == '4039') {
+						alert("카테고리 중분류를 선택해주세요.");
+					} else if (result.status == '4040') {
+						alert("문의 제목을 입력해주세요.");
+					} else if (result.status == '4041') {
+						alert("문의 내용을 입력해주세요.");
+						$("#content").focus();
+					} else if (result.status == '4042') {
+						if (result.message != null && result.message.length > 0) {
+							if(result.errorCode == '4211') {
+								// no conatact info
+								if( confirm("휴대폰 번호나 이메일을 입력해주셔야 문의가 가능합니다.\n입력을 위해 내 정보 페이지로 이동합니다.") ) {
+									location.href = 'https://member.melon.com/muid/web/help/myinfointro_inform.htm';
+								}
+							} else if(result.errorCode == '4212' || result.errorCode == '4213') {
+								// invalid email or invalid phone number
+								if( confirm("연락처가 유효하지 않습니다.\n수정을 위해 내 정보 페이지로 이동합니다.") ) {
+									location.href = 'https://member.melon.com/muid/web/help/myinfointro_inform.htm';
+								}
+							} else {
+								alert(result.message);
+							}
+						} else if (result.errorCode != null) {
+							alert("요청사항을 처리 중 오류가 발생했습니다. [" + result.errorCode + "]");
+						} else {
+							alert("네트워크 통신이 원활하지 않습니다. 다음에 다시 시도해주세요.");
+						}
+					} else {
+						alert("요청사항을 처리 중 오류가 발생했습니다.");
+					}
+				},
+				error : function(jqXHR, textStatus, errorThrown){
+					console.log(jqXHR)
+					console.log(textStatus)
+					console.log(errorThrown)
+					alert("요청사항을 처리중 오류가 발생했습니다. [" + textStatus + "]");
+				}
+			});
+		}
+	
+		// CRMS 파일첨부
+		function addFile(fileName) {
+			//console.log("======== OneToOne CRMS addFile Starting ========= ");
+	
+			//첨부파일은 5개까지 첨부 가능
+			//저장된 파일정보 배열
+			var fileInfoArr = new Array();
+			for(var i = 0 ; i < fileArray.length ; i++){
+				if(fileArray[i] != null && fileArray[i] != ""){
+					fileInfoArr.push(fileArray[i]);
+				}
+			}
+			var attFileSize = Number(fileInfoArr.length); // 첨부되어있는 파일의 개수
+			if (attFileSize > 4){
+				alert("5개 이하의 파일만 첨부할 수 있습니다.");
+				return;
+			}
+			if(fileName == "") return;
+			var extName = fileName.slice(fileName.indexOf(".") + 1).toLowerCase();
+			var chkExt = false;
+			$.each(extList, function(i, item) {
+				if(item.toLowerCase() == extName.toLowerCase()) {
+					chkExt = true;
+				}
+			});
+			if(chkExt == false) {
+				alert(extName + " 파일 형식은 업로드 하실 수 없습니다.");
+				$("#filename").val('');
+				return;
+			}
+			fIdx ++;
+			var li_filename = "filename" + fIdx;
+			var s = '<li name="'+ li_filename + '" id="' + li_filename + '">' + fileName + '&nbsp;&nbsp;<button id="'+fIdx+'" onclick="javascript:delItem(this);"><font color = "red">삭제</font></button>' + '</li>';
+			$("#file_list_box").append(s);
+	
+			document.kageFileUploadForm.file.readOnly = true;
+			document.kageFileUploadForm.submit();
+	
+			//console.log("======== OneToOne CRMS addFile Started ========= ");
+		}
+	
+		/**
+		 * CRMS 파일첨부 후 콜백함수
+		 */
+		function proxyCallback(accessKey, fileName, fileSize, status) {
+			//console.log("======== OneToOne CRMS proxyCallback Starting ========= ");
+	
+			data = {
+				fIdx : fIdx,
+				accessKey : accessKey,
+				fileName : fileName,
+				fileSize : fileSize,
+				status : status
+			}
+	
+			var li_filename = "filename" + fIdx;
+			document.kageFileUploadForm.file.readOnly = false;
+			if(status != "200") {
+				alert("업로드에 실패하였습니다.");
+				$("#"+li_filename).remove();
+				resetFile();
+				return false;
+			}
+	
+			//총 파일 사이즈
+			var totalFileSize = Number(getTotalFileSize()) + Number(fileSize);
+			if(totalFileSize > 10000000){
+				alert("첨부 파일은 총 10MB까지만 업로드 하실 수 있습니다.");
+				$("#"+li_filename).remove();
+				kageFileRemove(data);
+				resetFile();
+				return false;
+			}
+			else {
+				fileArray.push(data);
+				$("#file_size_box").html(Math.ceil(totalFileSize/1000));
+				resetFile();
+				return true;
+			}
+	
+			//console.log("======== OneToOne CRMS proxyCallback Started ========= ");
+		}
+	
+		function delItem(obj) {
+			//console.log("======== OneToOne CRMS delItem Starting ========= ");
+			//console.log("delItem : "+obj);
+			var fIdx = $(obj).attr("id");
+			var name = $(obj).parent().attr("name");
+			$("#"+name).remove();
+			$(obj).parent().remove();
+			oneFileDel(fIdx);
+			//console.log("======== OneToOne CRMS delItem Started ========= ");
+		}
+	
+		function oneFileDel(fIdx) {
+			//console.log("======== OneToOne CRMS oneFileDel Starting ========= ");
+			//console.log("fIdx : "+fIdx);
+	
+			var accessKey = "";
+			var newFileArray = new Array();
+	
+			for(var i=0; i<fileArray.length; i++){
+				if(fIdx == fileArray[i].fIdx){
+					accessKey = fileArray[i].accessKey;
+				} else {
+					newFileArray.push(fileArray[i]);
+				}
+			}
+	
+			fileArray = newFileArray;
+	
+			//총 파일사이즈 다시 입력
+			$("#file_size_box").html(Math.ceil(getTotalFileSize()/1000));
+	
+			//console.log("kageFileRemove accessKey : "+accessKey);
+	
+			kageFileRemove(data);
+	
+			//console.log("======== OneToOne CRMS oneFileDel Starting ========= ");
+		}
+	
+		function kageFileRemove(data){
+			$.ajax({
+				url  : "/web/customer/help/kageFileRemove.json",
+				type : "GET",
+				dataType: 'json',
+				data : {accessKey : data.accessKey},
+				success : function(result){
+					//console.log(result.status);
+					/*
+					if(result.status == 200){
+						alert("파일 삭제에 성공하였습니다.");
+					}else{
+						alert("파일 삭제에 실패하였습니다. 관리자에게 문의하십시오.");
+					}
+					 */
+				},
+				error:function(jqXHR, textStatus, errorThrown){
+					alert("파일 삭제에 실패하였습니다. 관리자에게 문의하십시오." + textStatus);
+					alert(errorThrown);
+				}
+			});
+		}
+	
+		// Form 초기화
+		function resetFile(){
+			//console.log("======== OneToOne CRMS resetFile Starting ========= ");
+			if(navigator.userAgent.indexOf("MSIE") > 0){
+				document.kageFileUploadForm.reset();
+			} else {
+				$("#kageFileUploadForm").val("");
+			}
+			//console.log("======== OneToOne CRMS resetFile Started ========= ");
+		}
+	
+		//총 파일사이즈 계산
+		function getTotalFileSize()
+			{
+			var totalFileSize = 0;
+	
+			for(var i=0; i<fileArray.length; i++){
+				totalFileSize = Number(totalFileSize) + Number(fileArray[i].fileSize);
+			}
+	
+			return totalFileSize;
+		}
+	</script>
+				<!-- //contents -->
+			</div>
+		</div>
+
+	</div>
+	
+	</body>
+
+
+
+
+
+</html>

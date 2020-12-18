@@ -1,0 +1,94 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="w3-display-container" style="margin-bottom:50px">
+        <img src="/static/my_cart/shopping.png" style="width:100%">
+
+        <div class="w3-display-bottomleft w3-container w3-amber w3-hover-orange w3-hide-small"
+            style="bottom:20%;opacity:0.7;width:60%">
+            <h2>환영합니다<b>{{session['uid']}}</b>님! <br>이곳은 마이페이지입니다.</h2>
+        </div>
+    </div>
+
+    <div class="w3-row w3-container" style="margin:50px 0">
+        <div class="w3-half w3-container">
+            <div class="w3-topbar w3-border-amber">
+                <h2>{{session['uid']}}님의 회원정보 수정</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>아이디</th>
+                            <th>비밀번호</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ session['name'] }}</td>
+                            <td>{{ session['uid'] }}</td>
+                            <td>{{ session['upw'] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="w3-half w3-container">
+            <div class="w3-topbar w3-border-amber">
+                <h2><b>{{session['uid']}}</b> 님의 장바구니</h2>
+                <table class="table_th_grey">
+                    <thead>
+                        <tr>
+                            <th>제품명</th>
+                            <th>사이즈</th>
+                            <th>수량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 세션이 존재할 때만 보이게 하기 위해 -->
+                        {% if session['top_name'] %}
+                        <tr>
+                            <td>{{session['top_name'] }}</td>
+                            <td>{{session['top_size'] }}</td>
+                            <td>{{session['top_amt'] }}</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if session['pants_name'] %}
+                        <tr>
+                            <td>{{session['pants_name'] }}</td>
+                            <td>{{session['pants_size'] }}</td>
+                            <td>{{session['pants_amt'] }}</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if session['acc_name'] %}
+                        <tr>
+                            <td>{{session['acc_name'] }}</td>
+                            <td>{{session['acc_size'] }}</td>
+                            <td>{{session['acc_amt'] }}</td>
+                        </tr>
+                        {% endif %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    // 상품을 추가할때마다 늘어나는 옵션을 구현해보고 싶었는데 JS문법을 이해해야하는데 시간이 많이 걸릴 것 같아 포기
+    </script>
+</div>

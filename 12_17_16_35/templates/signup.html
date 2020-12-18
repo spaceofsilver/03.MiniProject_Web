@@ -1,0 +1,99 @@
+{#
+- 본 페이지는 회원가입 기능
+- index.html과 레이아웃은 동일하게 유지되면서, 콘텐츠만 변경되는 구조
+#}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include ["a.html", "bf_public/head.html"] ignore missing %}
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        {% include "bf_public/nav.html" %}
+        {% include "bf_public/menu.html" %}
+        {# 실제 서비스 화면 start #}
+
+
+        <div class="content-wrapper">
+            {# 모든 콘텐츠의 헤더 파트이고, 현재 페이지가 어디 에 위치해있는지
+            그 경로를 네비게이션하고 있다(모든 페이지는 필수로 유지) #}
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">회원가입</h1>
+
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    {# row 단위로 한줄의 콘텐츠가 생성 #}
+                    <form method="post">
+                        <table border='1'>
+                            <thead>
+                            </thead>
+                            <tr>
+                                <td>아이디</td>
+                                <td> <input type="text" name="uid" class="form-control" placeholder="아이디" required>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>비밀번호</td>
+                                <td> <input type="password" name="upw" class="form-control" placeholder="비밀번호" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>이름</td>
+                                <td> <input type="text" name="name" class="form-control" placeholder="이름" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>성별</td>
+                                <td>&nbsp;&nbsp; <label><input type="radio" name="gender" value="male"> 남</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label><input type="radio" name="gender" value="female"> 여</label></td> 
+                                
+                            </tr>
+                            <tr>
+                                <td>주소</td>
+                                <td> <input type="text" name="address" class="form-control" placeholder="주소" required>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <tr><button>가입하기</button> </tr>
+                        
+                    </form>
+                </div>
+        </div>
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+
+
+
+    {# 실제 서비스 화면 end #}
+
+    {% include "bf_public/footer.html" %}
+    {% include "bf_public/aside.html" %}
+    </div>
+    {% include "bf_public/js.html" %}
+</body>
+
+</html>

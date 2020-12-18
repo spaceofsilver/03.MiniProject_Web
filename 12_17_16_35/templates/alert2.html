@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <!-- javascript는 html에 연결되어 있을때만 작동한다(클라이언트 사이드)
+        단, 서버사이드에서 작동된다면(nodejs) 예외 -->
+    <!-- 
+        - HTML이 브라우저에 의해 한줄 한줄 랜더링이 된다
+        - 랜더링의 결과로 화면에 내용이 보인다. 이때, html들은 
+        - DOM(Document Object Model)이라는 문서객체모델이라는 표준에 따라
+        - 객체지향적으로 브라우저 메모리에 로드된다
+        - 이때부터 JS가 조작할수 있다
+    -->
+    <!-- js(or css)가 html에 포함되는 3가지 형태 
+        - external : 외부에 *.js로 존재, 참조하는 형태 
+        - internal : 내부에 <script>...</script> 엘리먼트로 존재하는 형태
+                     - <head>..</head>
+                        -> 문서가 다 로드되다고 브라우저가 알려준다
+                        -> 이때부터 조작 시작
+                     - </body> 닫기 직전 -> 문서의 내용이 화면에 다 보인다
+                       -> 랜더링이 다 끝났다 이 타이밍
+                     - 조작하고 싶은 태그 바로 밑에 위치
+                       -> 조작할 엘리먼트 바로 밑에서 표현
+        - inline   : start tag내에 속성을 포함되는 경우
+                     <a onclick='javascript:show();'>클릭</a>
+    -->
+<head>    
+</head>    
+<body>
+    <!-- <h1>여기까지 화면에 보인다</h1> -->
+    <script>
+        // 주석
+        console.log('A')
+        alert('회원가입이 완료되었습니다')
+        console.log('B')      
+        // 이전 페이지로 이동
+        history.go(-2)
+    </script>
+    <!-- <h1>스크립트 이후 화면</h1> -->
+</body>
+</html>
